@@ -10,12 +10,5 @@ from .models import Board
 def home(request):
     #list all the objects in the Board
     boards = Board.objects.all()
-    #create an empty list to store the board names
-    boards_names = list()
 
-    for board in boards:
-        boards_names.append(board.name)
-
-    response_html = '<br>'.join(boards_names)
-
-    return HttpResponse(response_html)
+    return render(request, 'home.html', {'boards':boards})

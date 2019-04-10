@@ -19,7 +19,7 @@ from django.conf.urls import url
 
 from boards import views
 
-urlpatterns = {
+urlpatterns = [
     url(r'^$', views.home, name='home'),
     path('admin/', admin.site.urls),
-}
+]
